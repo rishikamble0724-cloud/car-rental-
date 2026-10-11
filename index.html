@@ -1,0 +1,58 @@
+<!-- ============================================================
+     CAR RENTAL SYSTEM  -  FRONTEND (HTML)  -  Mini Project
+     Deployed on Vercel together with the Python backend.
+     ============================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Car Rental System</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f4; }
+    h1 { text-align: center; color: #222; }
+    .box { background: #fff; padding: 15px; margin: 15px auto; max-width: 800px;
+           border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,.15); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; font-size: 14px; }
+    th { background: #333; color: #fff; }
+    input { padding: 6px; margin: 4px; width: 120px; }
+    button { padding: 7px 14px; margin: 4px; background: #d17a00; color: #fff;
+             border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background: #a75f00; }
+    #msg { color: green; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h1>CAR RENTAL SYSTEM</h1>
+
+  <div class="box">
+    <h3>Book a Car</h3>
+    <input id="customer" placeholder="Customer name" />
+    <input id="carId" placeholder="Car ID" />
+    <input id="days" placeholder="Days" />
+    <button onclick="bookCar()">Book Car</button>
+    <button onclick="loadData()">Refresh</button>
+    <p id="msg"></p>
+  </div>
+
+  <div class="box">
+    <h3>Available Cars</h3>
+    <table>
+      <thead><tr><th>ID</th><th>Brand</th><th>Car Name</th><th>Price / Day</th></tr></thead>
+      <tbody id="carTable"></tbody>
+    </table>
+  </div>
+
+  <div class="box">
+    <h3>My Bookings</h3>
+    <table>
+      <thead><tr><th>ID</th><th>Customer</th><th>Car</th><th>Days</th><th>Amount</th></tr></thead>
+      <tbody id="bookTable"></tbody>
+    </table>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
